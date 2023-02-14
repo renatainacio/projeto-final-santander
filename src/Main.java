@@ -35,7 +35,7 @@ public class Main {
             System.out.println(cb.getTotalGolsPorRodada());
             System.out.println();
             System.out.println("Tabela:");
-            for(int i = 1; i < cb.getTodosOsTimes().size(); i++)
+            for(int i = 1; i <= cb.getTodosOsTimes().size(); i++)
             System.out.println(i + ". " + cb.getTabelaOrdenada().get(i - 1));
         }
         catch (IOException e){
