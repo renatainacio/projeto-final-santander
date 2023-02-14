@@ -9,7 +9,7 @@ public record PosicaoTabela(Time time,
                             Long saldoDeGols,
                             Long jogos) implements Comparable<PosicaoTabela>{
     public Long pontos(){
-        return vitorias * 3 + empates;
+        return (vitorias * 3 + empates);
     }
     @Override
     public String toString() {

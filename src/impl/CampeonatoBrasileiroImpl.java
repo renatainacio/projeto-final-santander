@@ -167,7 +167,7 @@ public class CampeonatoBrasileiroImpl {
         return(jogosPorTimeComoMandantes);
     }
 
-    private Map<Time, List<Jogo>> getTodosOsJogosPorTimeComoVisitante() {
+    public Map<Time, List<Jogo>> getTodosOsJogosPorTimeComoVisitante() {
         Map<Time, List<Jogo>> jogosPorTimeComoVisitante = new HashMap<>();
         for(Time time : getTodosOsTimes()){
             List <Jogo> jogosComoVisitante = this.brasileirao
@@ -200,7 +200,7 @@ public class CampeonatoBrasileiroImpl {
                     .count();
             Long empates = jogos
                     .stream()
-                    .filter(jogo->jogo.vencedor().equals("-"))
+                    .filter(jogo->jogo.vencedor().toString().equals("-"))
                     .count();
             Long derrotas = jogos
                     .stream()
