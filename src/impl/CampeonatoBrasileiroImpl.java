@@ -181,8 +181,12 @@ public class CampeonatoBrasileiroImpl {
 
     public Map<Time, List<Jogo>> getTodosOsJogosPorTime() {
         Map<Time, List<Jogo>> jogosPorTime = new HashMap<>();
-        jogosPorTime.putAll(getTodosOsJogosPorTimeComoVisitante());
-        jogosPorTime.putAll(getTodosOsJogosPorTimeComoMandantes());
+        for(Time time : getTodosOsTimes()) {
+            List<Jogo> todos = new ArrayList<>();
+            todos.addAll(getTodosOsJogosPorTimeComoVisitante().get(time));
+            todos.addAll(getTodosOsJogosPorTimeComoMandantes().get(time));
+            jogosPorTime.put(time, todos);
+        }
         return(jogosPorTime);
     }
     public Set<PosicaoTabela> getTabela() {
